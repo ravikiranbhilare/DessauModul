@@ -218,9 +218,8 @@ button { font: inherit; color: inherit; cursor: pointer; }
 .partner__place { font-size: 14px; font-weight: 500; color: var(--coral); margin: -8px 0 14px; }
 .partner__name { font-family: var(--serif); font-size: clamp(30px, 3vw, 40px); font-weight: 500; margin: 6px 0 16px; letter-spacing: -0.01em; }
 .partners__join { display: grid; place-items: center; width: 64px; font-family: var(--serif); font-size: 40px; color: var(--coral); }
-/* Bauhaus timeline: square, outlined square, circle — the shapes from the logo */
+/* Bauhaus-inspired values: square, outlined square, circle — the shapes from the logo */
 .bauhaus { display: grid; grid-template-columns: repeat(3, 1fr); position: relative; }
-.bauhaus::before { content: ""; position: absolute; left: 0; right: 0; top: 20px; height: 2px; background: var(--line); }
 .bauhaus li { position: relative; padding-right: 32px; min-width: 0; }
 .bauhaus li p:last-child { color: var(--ink-soft); max-width: 340px; }
 .bauhaus__mark { display: block; width: 40px; height: 40px; margin-bottom: 22px; position: relative; background: var(--cream); }
@@ -235,7 +234,7 @@ button { font: inherit; color: inherit; cursor: pointer; }
 .ideas__quote::before { content: "“"; color: var(--coral); }
 .ideas__quote::after { content: "”"; color: var(--coral); }
 .ideas article p:last-child { color: var(--ink-soft); font-size: 16px; }
-.ideas__note { margin-top: 18px; font-size: 14px; color: var(--ink-soft); }
+.ideas__note { margin-top: 32px; font-size: 14px; color: var(--ink-soft); }
 
 .factories-head { margin: clamp(72px, 9vw, 112px) 0 clamp(32px, 4vw, 48px); padding-top: clamp(40px, 5vw, 56px); border-top: 1px solid var(--line); }
 .factories-head > * { max-width: 760px; }
@@ -467,7 +466,6 @@ button { font: inherit; color: inherit; cursor: pointer; }
   .partners { grid-template-columns: 1fr; }
   .bauhaus, .ideas { grid-template-columns: 1fr; }
   .bauhaus { gap: 32px; }
-  .bauhaus::before { left: 20px; right: auto; top: 0; bottom: 0; width: 2px; height: auto; }
   .bauhaus li { padding: 0 0 0 64px; }
   .bauhaus__mark { position: absolute; left: 0; top: 0; }
   .partners__join { width: auto; height: 56px; }
