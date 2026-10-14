@@ -34,3 +34,18 @@ DNS lives at GoDaddy. Only the website records (`A @` and `CNAME www`) point to 
 
 - **Enquiry form:** submissions are emailed to `info@dessaumodul.com` through [FormSubmit](https://formsubmit.co) (set in `js/main.js`). The very first submission sends an activation email to that inbox; click the link once and every later enquiry arrives as an email.
 - **Photos:** the current photos come from the AID Woods company profile. Swap in your own project photos by replacing the files in `assets/img/` and keeping the same file names.
+
+## Photo credits
+
+The finish photos (`assets/img/finish-*.webp`) are from [Pexels](https://www.pexels.com) and used under the [Pexels License](https://www.pexels.com/license/), which allows free commercial use without attribution. They show the look of each finish, not Dessau Modul projects; replace them with photos of your own work when you have them.
+
+| File | Pexels photo |
+|---|---|
+| finish-laminate | https://www.pexels.com/photo/7061393/ |
+| finish-sincro | https://www.pexels.com/photo/3847520/ |
+| finish-high-gloss | https://www.pexels.com/photo/7533765/ |
+| finish-acrylic | https://www.pexels.com/photo/6265832/ |
+| finish-back-painted | https://www.pexels.com/photo/6538936/ |
+| finish-pu | https://www.pexels.com/photo/3926542/ |
+| finish-routered-pu | https://www.pexels.com/photo/94865/ |
+| finish-veneer | https://www.pexels.com/photo/6758240/ |

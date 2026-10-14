@@ -31,7 +31,7 @@
   byId.forEach((_, id) => { const s = document.getElementById(id); if (s) spy.observe(s); });
 
   // Reveal on scroll
-  const revealTargets = $$(".section__head, .partner, .pull, .product, .commitments li, .steps li, .journey figure, .factory__grid figure, .spec, .merino, .finish-list li, .writing__grid article, .areas, .vm__grid > div");
+  const revealTargets = $$(".section__head, .partner, .pull, .product, .commitments li, .steps li, .journey figure, .factory__grid figure, .spec, .merino, .finish, .writing__grid article, .areas, .vm__grid > div");
   if ("IntersectionObserver" in window && !matchMedia("(prefers-reduced-motion: reduce)").matches) {
     const io = new IntersectionObserver((entries) => {
       entries.forEach((e) => {
