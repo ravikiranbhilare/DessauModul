@@ -210,7 +210,7 @@ button { font: inherit; color: inherit; cursor: pointer; }
 .partner p:last-child { color: var(--ink-soft); }
 .partner__key {
   display: grid; place-items: center; width: 52px; height: 52px;
-  font-family: var(--serif); font-size: 26px; font-weight: 600; margin-bottom: 28px;
+  font-family: var(--serif); font-size: 20px; font-weight: 600; margin-bottom: 28px;
 }
 .partner__key--mustard { background: var(--mustard); color: var(--forest); }
 .partner__key--coral { background: var(--coral); color: var(--cream); border-radius: 50%; }

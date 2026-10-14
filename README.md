@@ -1,6 +1,6 @@
 # Dessau Modul — website
 
-Single-page marketing site for **Dessau Modul**, modular interiors made in Pune, manufactured by AID Woods (our lifelong manufacturing partner).
+Single-page marketing site for **Dessau Modul**, modular interiors made in Pune at our own factories (Manjri since 2016, Kasurdi MIDC since 2022).
 
 It's plain static HTML, CSS and JS, with no build step.
 
