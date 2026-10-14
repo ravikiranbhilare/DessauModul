@@ -71,10 +71,10 @@
   lb.addEventListener("click", (e) => { if (e.target !== lbImg) closeLb(); });
   document.addEventListener("keydown", (e) => { if (e.key === "Escape" && !lb.hidden) closeLb(); });
 
-  // Enquiry form — sent to ravi@dessaumodul.com through FormSubmit (formsubmit.co).
+  // Enquiry form — sent to info@dessaumodul.com through FormSubmit (formsubmit.co).
   // The first submission emails an activation link to that inbox; enquiries arrive once it's clicked.
-  const FORM_ENDPOINT = "https://formsubmit.co/ajax/ravi@dessaumodul.com";
-  const FALLBACK = "Please call +91 97307 63884 or email ravi@dessaumodul.com.";
+  const FORM_ENDPOINT = "https://formsubmit.co/ajax/info@dessaumodul.com";
+  const FALLBACK = "Please call +91 97307 63884 or email info@dessaumodul.com.";
   const form = $("#enquiry");
   const status = $(".form__status", form);
   const submitBtn = $('button[type="submit"]', form);
@@ -90,7 +90,7 @@
     if (!ok) { status.textContent = "Please add your name and phone number."; return; }
 
     if (form.dataset.preview) {
-      status.textContent = "This is a preview, so enquiries aren’t sent from here. On the live site they go straight to ravi@dessaumodul.com.";
+      status.textContent = "This is a preview, so enquiries aren’t sent from here. On the live site they go straight to info@dessaumodul.com.";
       return;
     }
     if (form.elements._honey.value) return; // spam bots fill the hidden field
