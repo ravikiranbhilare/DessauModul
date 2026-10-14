@@ -25,7 +25,5 @@ Upload the folder as-is to any static host (Netlify, Vercel, GitHub Pages, Cloud
 
 ## Before going live
 
-- **Phone number:** replace `+91 98XXX XXXXX` and `tel:+9198XXXXXXXX` in `index.html`.
-- **Showroom address:** replace "Kharadi, Pune (address to follow)".
-- **Enquiry form:** it currently opens the visitor's email app, addressed to `hello@dessaumodul.com`. To receive submissions directly, point the form at a service such as Formspree or Web3Forms, or at a WhatsApp link.
+- **Enquiry form:** it currently opens the visitor's email app, addressed to `ravi@dessaumodul.com`. To receive submissions directly, point the form at a service such as Formspree or Web3Forms, or at a WhatsApp link.
 - **Photos:** the current photos come from the AID Woods company profile. Swap in your own project photos by replacing the files in `assets/img/` and keeping the same file names.

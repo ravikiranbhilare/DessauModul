@@ -86,7 +86,7 @@
     if (!ok) { status.textContent = "Please add your name and phone number."; return; }
 
     if (form.dataset.preview) {
-      status.textContent = "This is a preview, so enquiries aren’t sent from here. On the live site this opens an email to hello@dessaumodul.com.";
+      status.textContent = "This is a preview, so enquiries aren’t sent from here. On the live site this opens an email to ravi@dessaumodul.com.";
       return;
     }
     const d = new FormData(form);
@@ -102,7 +102,7 @@
       d.get("message") || "",
     ].join("\n");
     const subject = `Consultation request — ${d.get("name")} (${d.get("area")})`;
-    window.location.href = `mailto:hello@dessaumodul.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    window.location.href = `mailto:ravi@dessaumodul.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     status.textContent = "Opening your email app. Send the message and we’ll get back to you.";
   });
 })();

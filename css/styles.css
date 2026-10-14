@@ -215,6 +215,7 @@ button { font: inherit; color: inherit; cursor: pointer; }
 .partner__key--mustard { background: var(--mustard); color: var(--forest); }
 .partner__key--coral { background: var(--coral); color: var(--cream); border-radius: 50%; }
 .partner__role { font-size: 12px; letter-spacing: .2em; text-transform: uppercase; font-weight: 600; color: var(--ink-soft); }
+.partner__place { font-size: 14px; font-weight: 500; color: var(--coral); margin: -8px 0 14px; }
 .partner__name { font-family: var(--serif); font-size: clamp(30px, 3vw, 40px); font-weight: 500; margin: 6px 0 16px; letter-spacing: -0.01em; }
 .partners__join { display: grid; place-items: center; width: 64px; font-family: var(--serif); font-size: 40px; color: var(--coral); }
 .pull {
@@ -344,8 +345,8 @@ button { font: inherit; color: inherit; cursor: pointer; }
 .map__river { fill: none; stroke: var(--sage); stroke-width: 3; stroke-dasharray: 2 7; stroke-linecap: round; }
 .map__pin circle { fill: var(--forest); }
 .map__pin text { font-family: var(--sans); font-size: 13px; font-weight: 600; text-anchor: middle; fill: var(--ink); }
-.map__pin--home circle { fill: var(--coral); }
-.map__pin--home { animation: pulse 2.4s ease-in-out infinite; transform-origin: 340px 140px; }
+.map__pin--home rect { fill: var(--coral); }
+.map__pin--home { animation: pulse 2.4s ease-in-out infinite; transform-origin: 312px 198px; }
 @keyframes pulse { 50% { transform: scale(1.08); } }
 
 /* ---------- Vision / Mission ---------- */
@@ -367,6 +368,11 @@ button { font: inherit; color: inherit; cursor: pointer; }
 .contact__list dt { font-size: 12px; letter-spacing: .18em; text-transform: uppercase; color: var(--sage); padding-top: 3px; }
 .contact__list a { text-decoration: none; border-bottom: 1px solid var(--line-light); }
 .contact__list a:hover { border-color: var(--mustard); }
+
+.factories { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 32px; }
+.factory-card { font-style: normal; padding: 22px; border: 1px solid var(--line-light); font-size: 14px; line-height: 1.55; color: var(--sage); min-width: 0; }
+.factory-card__label { font-size: 11px; letter-spacing: .18em; text-transform: uppercase; color: var(--mustard); font-weight: 600; }
+.factory-card__name { font-family: var(--serif); font-size: 22px; color: var(--cream); margin: 6px 0 10px; }
 
 .form { background: var(--forest-2); padding: clamp(24px, 4vw, 44px); border: 1px solid var(--line-light); display: grid; gap: 18px; align-self: start; }
 .form__row { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
@@ -464,6 +470,7 @@ button { font: inherit; color: inherit; cursor: pointer; }
   .finish-list li { grid-template-columns: 1fr; gap: 2px; }
   .form__row { grid-template-columns: 1fr; }
   .contact__list > div { grid-template-columns: 1fr; gap: 4px; }
+  .factories { grid-template-columns: 1fr; }
   .journey__track { grid-template-columns: repeat(5, 82%); }
   .masonry { columns: 2; column-gap: 10px; }
   .tile { margin-bottom: 10px; }
