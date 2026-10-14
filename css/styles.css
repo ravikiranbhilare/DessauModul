@@ -209,14 +209,14 @@ button { font: inherit; color: inherit; cursor: pointer; }
 .partner { background: var(--paper); padding: clamp(28px, 4vw, 48px); border: 1px solid var(--line); position: relative; }
 .partner p:last-child { color: var(--ink-soft); }
 .partner__key {
-  display: grid; place-items: center; width: 52px; height: 52px;
-  font-family: var(--serif); font-size: 20px; font-weight: 600; margin-bottom: 28px;
+  display: grid; place-items: center; width: 52px; height: 52px; margin-bottom: 28px;
 }
+.partner__key svg { width: 30px; height: 30px; }
 .partner__key--mustard { background: var(--mustard); color: var(--forest); }
 .partner__key--coral { background: var(--coral); color: var(--cream); border-radius: 50%; }
 .partner__role { font-size: 12px; letter-spacing: .2em; text-transform: uppercase; font-weight: 600; color: var(--ink-soft); }
 .partner__place { font-size: 14px; font-weight: 500; color: var(--coral); margin: -8px 0 14px; }
-.partner__name { font-family: var(--serif); font-size: clamp(30px, 3vw, 40px); font-weight: 500; margin: 6px 0 16px; letter-spacing: -0.01em; }
+.partner__name { font-family: var(--serif); font-size: clamp(36px, 3.8vw, 52px); line-height: 1.05; font-weight: 500; margin: 6px 0 16px; letter-spacing: -0.01em; }
 .partners__join { display: grid; place-items: center; width: 64px; font-family: var(--serif); font-size: 40px; color: var(--coral); }
 /* Bauhaus-inspired values: square, outlined square, circle — the shapes from the logo */
 .bauhaus { display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px 0; position: relative; }
