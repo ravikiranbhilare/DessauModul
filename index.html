@@ -419,30 +419,30 @@
       </div>
       <form class="form" id="enquiry" novalidate>
         <div class="form__row">
-          <label>Name<input name="name" autocomplete="name" required></label>
-          <label>Phone<input name="phone" type="tel" autocomplete="tel" required></label>
+          <label>Name<input id="f-name" name="name" autocomplete="name" required></label>
+          <label>Phone<input id="f-phone" name="phone" type="tel" autocomplete="tel" required></label>
         </div>
-        <label>Email<input name="email" type="email" autocomplete="email"></label>
+        <label>Email<input id="f-email" name="email" type="email" autocomplete="email"></label>
         <div class="form__row">
           <label>Area
-            <select name="area">
+            <select id="f-area" name="area">
               <option>Kharadi</option><option>Viman Nagar</option><option>Baner</option><option>Wakad</option><option>Hinjewadi</option><option>Elsewhere in Pune</option>
             </select>
           </label>
           <label>I am a
-            <select name="role">
+            <select id="f-role" name="role">
               <option>Homeowner</option><option>Architect</option><option>Interior Designer</option><option>Builder / Developer</option><option>NRI Client</option>
             </select>
           </label>
         </div>
         <fieldset class="form__checks">
           <legend>Interested in</legend>
-          <label><input type="checkbox" name="interest" value="Kitchen"> Kitchen</label>
-          <label><input type="checkbox" name="interest" value="Wardrobes"> Wardrobes</label>
-          <label><input type="checkbox" name="interest" value="Bedroom / Vanity"> Bedroom / Vanity</label>
-          <label><input type="checkbox" name="interest" value="TV / Home Office"> TV / Home Office</label>
+          <label><input id="f-int-1" type="checkbox" name="interest" value="Kitchen"> Kitchen</label>
+          <label><input id="f-int-2" type="checkbox" name="interest" value="Wardrobes"> Wardrobes</label>
+          <label><input id="f-int-3" type="checkbox" name="interest" value="Bedroom / Vanity"> Bedroom / Vanity</label>
+          <label><input id="f-int-4" type="checkbox" name="interest" value="TV / Home Office"> TV / Home Office</label>
         </fieldset>
-        <label>Anything else?<textarea name="message" rows="3" placeholder="Flat size, possession date, what you have in mind…"></textarea></label>
+        <label>Anything else?<textarea id="f-message" name="message" rows="3" placeholder="Flat size, possession date, what you have in mind…"></textarea></label>
         <button class="btn btn--mustard btn--block" type="submit">Request my consultation</button>
         <p class="form__status" role="status" aria-live="polite"></p>
       </form>

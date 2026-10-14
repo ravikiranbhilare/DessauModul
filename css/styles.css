@@ -1,5 +1,7 @@
 /* Dessau Modul — brand tokens taken from the logo */
+/* Single committed look: forest-green and cream bands from the logo */
 :root {
+  color-scheme: light;
   --forest: #14271f;
   --forest-2: #1b3329;
   --forest-3: #24402f;
@@ -37,12 +39,13 @@ body {
 }
 img { display: block; max-width: 100%; height: auto; }
 a { color: inherit; }
+h1, h2, h3 { text-wrap: balance; }
 h1, h2, h3, p, ul, ol, dl, dd, figure, blockquote { margin: 0; }
 ul, ol { padding: 0; list-style: none; }
 button { font: inherit; color: inherit; cursor: pointer; }
 :focus-visible { outline: 2px solid var(--mustard); outline-offset: 3px; }
 
-.wrap { width: 100%; max-width: var(--wrap); margin: 0 auto; padding: 0 var(--gutter); }
+.wrap { width: 100%; max-width: var(--wrap); margin: 0 auto; padding-left: max(var(--gutter), env(safe-area-inset-left, 0px)); padding-right: max(var(--gutter), env(safe-area-inset-right, 0px)); }
 .section { padding: var(--section) 0; }
 .dark { background: var(--forest); color: var(--cream); }
 
@@ -117,7 +120,7 @@ button { font: inherit; color: inherit; cursor: pointer; }
 
 /* ---------- Nav ---------- */
 .nav {
-  position: sticky; top: 0; z-index: 50;
+  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 50;
   background: rgba(20, 39, 31, 0.92);
   backdrop-filter: saturate(140%) blur(12px);
   -webkit-backdrop-filter: saturate(140%) blur(12px);
@@ -143,7 +146,7 @@ button { font: inherit; color: inherit; cursor: pointer; }
 .nav__toggle span:last-child { top: 25px; }
 .nav__toggle[aria-expanded="true"] span:first-child { top: 21px; transform: rotate(45deg); }
 .nav__toggle[aria-expanded="true"] span:last-child { top: 21px; transform: rotate(-45deg); }
-.mobile-menu { display: flex; flex-direction: column; padding: 8px var(--gutter) 24px; gap: 4px; border-top: 1px solid var(--line-light); }
+.mobile-menu { display: flex; flex-direction: column; padding-block: 8px 24px; padding-left: max(var(--gutter), env(safe-area-inset-left, 0px)); padding-right: max(var(--gutter), env(safe-area-inset-right, 0px)); gap: 4px; border-top: 1px solid var(--line-light); }
 .mobile-menu[hidden] { display: none; }
 .mobile-menu a:not(.btn) { padding: 12px 0; text-decoration: none; font-size: 18px; border-bottom: 1px solid var(--line-light); }
 .mobile-menu .btn { margin-top: 16px; }
@@ -398,11 +401,11 @@ button { font: inherit; color: inherit; cursor: pointer; }
 .lightbox__close { position: absolute; top: 16px; right: 20px; background: none; border: 0; color: var(--cream); font-size: 40px; line-height: 1; width: 48px; height: 48px; }
 
 /* ---------- Reveal ---------- */
-.reveal { opacity: 0; transform: translateY(24px); transition: opacity .8s var(--ease), transform .8s var(--ease); }
+.reveal { transform: translateY(16px); transition: transform .8s var(--ease); }
 .reveal.is-in { opacity: 1; transform: none; }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .reveal { opacity: 1; transform: none; transition: none; }
+  .reveal { transform: none; transition: none; }
   *, *::before, *::after { animation: none !important; transition: none !important; }
 }
 

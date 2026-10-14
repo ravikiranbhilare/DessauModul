@@ -85,6 +85,10 @@
     });
     if (!ok) { status.textContent = "Please add your name and phone number."; return; }
 
+    if (form.dataset.preview) {
+      status.textContent = "This is a preview, so enquiries aren’t sent from here. On the live site this opens an email to hello@dessaumodul.com.";
+      return;
+    }
     const d = new FormData(form);
     const interests = d.getAll("interest").join(", ") || "Not specified";
     const body = [
