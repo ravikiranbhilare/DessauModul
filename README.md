@@ -21,7 +21,13 @@ python3 -m http.server 8000
 
 ## Deploy
 
-Upload the folder as-is to any static host (Netlify, Vercel, GitHub Pages, Cloudflare Pages, or plain cPanel hosting).
+Hosted on Netlify, which deploys automatically from this repository on every push (`netlify.toml` holds the settings).
+
+- Main address: `https://www.dessaumodul.com`
+- `dessaumodul.com` redirects to `www` (set in `netlify.toml`)
+- `dessaumodul.in` is forwarded to `https://www.dessaumodul.com` from GoDaddy
+
+DNS lives at GoDaddy. Only the website records (`A @` and `CNAME www`) point to Netlify. Leave the email (`MX`, `TXT`) records alone.
 
 ## Before going live
 
