@@ -97,13 +97,13 @@
 
     const d = new FormData(form);
     const payload = {
-      _subject: `Consultation request: ${d.get("name")} (${d.get("area")})`,
+      _subject: `Consultation request: ${d.get("name")}${d.get("area") ? ` (${d.get("area")})` : ""}`,
       _template: "table",
       _captcha: "false",
       Name: d.get("name"),
       Phone: d.get("phone"),
       Email: d.get("email") || "-",
-      Area: d.get("area"),
+      "City / area": d.get("area") || "-",
       "I am a": d.get("role"),
       "Interested in": d.getAll("interest").join(", ") || "Not specified",
       Message: d.get("message") || "-",
