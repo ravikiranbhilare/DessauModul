@@ -219,7 +219,7 @@ button { font: inherit; color: inherit; cursor: pointer; }
 .partner__name { font-family: var(--serif); font-size: clamp(30px, 3vw, 40px); font-weight: 500; margin: 6px 0 16px; letter-spacing: -0.01em; }
 .partners__join { display: grid; place-items: center; width: 64px; font-family: var(--serif); font-size: 40px; color: var(--coral); }
 /* Bauhaus-inspired values: square, outlined square, circle — the shapes from the logo */
-.bauhaus { display: grid; grid-template-columns: repeat(3, 1fr); position: relative; }
+.bauhaus { display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px 0; position: relative; }
 .bauhaus li { position: relative; padding-right: 32px; min-width: 0; }
 .bauhaus li p:last-child { color: var(--ink-soft); max-width: 340px; }
 .bauhaus__mark { display: block; width: 40px; height: 40px; margin-bottom: 22px; position: relative; background: var(--cream); }
@@ -450,6 +450,7 @@ button { font: inherit; color: inherit; cursor: pointer; }
   .steps::before { display: none; }
   .factory__grid { grid-template-columns: repeat(2, 1fr); }
   .materials__grid { grid-template-columns: 1fr 1fr; }
+  .bauhaus { grid-template-columns: 1fr 1fr; }
   .spec--callout { grid-column: 1 / -1; }
 }
 
