@@ -32,5 +32,5 @@ DNS lives at GoDaddy. Only the website records (`A @` and `CNAME www`) point to 
 
 ## Before going live
 
-- **Enquiry form:** it currently opens the visitor's email app, addressed to `ravi@dessaumodul.com`. To receive submissions directly, point the form at a service such as Formspree or Web3Forms, or at a WhatsApp link.
+- **Enquiry form:** submissions are emailed to `ravi@dessaumodul.com` through [FormSubmit](https://formsubmit.co) (set in `js/main.js`). The very first submission sends an activation email to that inbox; click the link once and every later enquiry arrives as an email.
 - **Photos:** the current photos come from the AID Woods company profile. Swap in your own project photos by replacing the files in `assets/img/` and keeping the same file names.

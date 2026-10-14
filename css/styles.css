@@ -391,6 +391,8 @@ button { font: inherit; color: inherit; cursor: pointer; }
 .form__checks label { display: inline-flex; align-items: center; gap: 8px; padding: 9px 14px; border: 1px solid var(--line-light); color: var(--cream); cursor: pointer; font-size: 14px; }
 .form__checks input { accent-color: var(--mustard); }
 .form__checks label:has(input:checked) { border-color: var(--mustard); background: rgba(240, 171, 60, .1); }
+.form__honey { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
+.btn:disabled { opacity: .6; cursor: progress; transform: none; }
 .form__status { font-size: 14px; color: var(--mustard); min-height: 1.2em; }
 
 /* ---------- Footer ---------- */

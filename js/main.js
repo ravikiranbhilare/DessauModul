@@ -71,10 +71,14 @@
   lb.addEventListener("click", (e) => { if (e.target !== lbImg) closeLb(); });
   document.addEventListener("keydown", (e) => { if (e.key === "Escape" && !lb.hidden) closeLb(); });
 
-  // Enquiry form — composes an email to the studio (no backend required)
+  // Enquiry form — sent to ravi@dessaumodul.com through FormSubmit (formsubmit.co).
+  // The first submission emails an activation link to that inbox; enquiries arrive once it's clicked.
+  const FORM_ENDPOINT = "https://formsubmit.co/ajax/ravi@dessaumodul.com";
+  const FALLBACK = "Please call +91 97307 63884 or email ravi@dessaumodul.com.";
   const form = $("#enquiry");
   const status = $(".form__status", form);
-  form.addEventListener("submit", (e) => {
+  const submitBtn = $('button[type="submit"]', form);
+  form.addEventListener("submit", async (e) => {
     e.preventDefault();
     let ok = true;
     ["name", "phone"].forEach((n) => {
@@ -86,23 +90,44 @@
     if (!ok) { status.textContent = "Please add your name and phone number."; return; }
 
     if (form.dataset.preview) {
-      status.textContent = "This is a preview, so enquiries aren’t sent from here. On the live site this opens an email to ravi@dessaumodul.com.";
+      status.textContent = "This is a preview, so enquiries aren’t sent from here. On the live site they go straight to ravi@dessaumodul.com.";
       return;
     }
+    if (form.elements._honey.value) return; // spam bots fill the hidden field
+
     const d = new FormData(form);
-    const interests = d.getAll("interest").join(", ") || "Not specified";
-    const body = [
-      `Name: ${d.get("name")}`,
-      `Phone: ${d.get("phone")}`,
-      `Email: ${d.get("email") || "-"}`,
-      `Area: ${d.get("area")}`,
-      `I am a: ${d.get("role")}`,
-      `Interested in: ${interests}`,
-      "",
-      d.get("message") || "",
-    ].join("\n");
-    const subject = `Consultation request — ${d.get("name")} (${d.get("area")})`;
-    window.location.href = `mailto:ravi@dessaumodul.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    status.textContent = "Opening your email app. Send the message and we’ll get back to you.";
+    const payload = {
+      _subject: `Consultation request: ${d.get("name")} (${d.get("area")})`,
+      _template: "table",
+      _captcha: "false",
+      Name: d.get("name"),
+      Phone: d.get("phone"),
+      Email: d.get("email") || "-",
+      Area: d.get("area"),
+      "I am a": d.get("role"),
+      "Interested in": d.getAll("interest").join(", ") || "Not specified",
+      Message: d.get("message") || "-",
+    };
+    if (d.get("email")) payload._replyto = d.get("email");
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = "Sending…";
+    status.textContent = "";
+    try {
+      const res = await fetch(FORM_ENDPOINT, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify(payload),
+      });
+      const json = await res.json().catch(() => ({}));
+      if (!res.ok || String(json.success) !== "true") throw new Error(json.message || res.status);
+      form.reset();
+      status.textContent = "Thank you. Your request has been sent, and we’ll call you to fix a consultation time.";
+    } catch (err) {
+      status.textContent = `Sorry, your request couldn’t be sent. ${FALLBACK}`;
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.textContent = "Request my consultation";
+    }
   });
 })();
