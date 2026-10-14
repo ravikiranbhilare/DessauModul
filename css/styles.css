@@ -218,6 +218,29 @@ button { font: inherit; color: inherit; cursor: pointer; }
 .partner__place { font-size: 14px; font-weight: 500; color: var(--coral); margin: -8px 0 14px; }
 .partner__name { font-family: var(--serif); font-size: clamp(30px, 3vw, 40px); font-weight: 500; margin: 6px 0 16px; letter-spacing: -0.01em; }
 .partners__join { display: grid; place-items: center; width: 64px; font-family: var(--serif); font-size: 40px; color: var(--coral); }
+/* Bauhaus timeline: square, outlined square, circle — the shapes from the logo */
+.bauhaus { display: grid; grid-template-columns: repeat(3, 1fr); position: relative; }
+.bauhaus::before { content: ""; position: absolute; left: 0; right: 0; top: 20px; height: 2px; background: var(--line); }
+.bauhaus li { position: relative; padding-right: 32px; min-width: 0; }
+.bauhaus li p:last-child { color: var(--ink-soft); max-width: 340px; }
+.bauhaus__mark { display: block; width: 40px; height: 40px; margin-bottom: 22px; position: relative; background: var(--cream); }
+.bauhaus__mark--square { background: var(--mustard); }
+.bauhaus__mark--outline { border: 4px solid var(--forest); }
+.bauhaus__mark--circle { background: var(--coral); border-radius: 50%; }
+.bauhaus__year { font-family: var(--serif); font-size: 22px; font-weight: 500; margin-bottom: 8px; letter-spacing: -0.01em; }
+
+.ideas { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: clamp(48px, 6vw, 72px); }
+.ideas article { background: var(--paper); border: 1px solid var(--line); padding: 28px; min-width: 0; }
+.ideas__quote { font-family: var(--serif); font-style: italic; font-size: clamp(22px, 2vw, 26px); line-height: 1.2; margin-bottom: 14px; }
+.ideas__quote::before { content: "“"; color: var(--coral); }
+.ideas__quote::after { content: "”"; color: var(--coral); }
+.ideas article p:last-child { color: var(--ink-soft); font-size: 16px; }
+.ideas__note { margin-top: 18px; font-size: 14px; color: var(--ink-soft); }
+
+.factories-head { margin: clamp(72px, 9vw, 112px) 0 clamp(32px, 4vw, 48px); padding-top: clamp(40px, 5vw, 56px); border-top: 1px solid var(--line); }
+.factories-head > * { max-width: 760px; }
+.h2--sm { font-size: clamp(28px, 3.2vw, 42px); }
+
 .pull {
   margin-top: clamp(48px, 6vw, 80px);
   font-family: var(--serif); font-size: clamp(22px, 2.4vw, 32px); line-height: 1.35;
@@ -442,6 +465,11 @@ button { font: inherit; color: inherit; cursor: pointer; }
   .stats > div:nth-child(3) { padding-left: 0; }
   .stats > div:nth-child(n+3) { border-top: 1px solid var(--line-light); }
   .partners { grid-template-columns: 1fr; }
+  .bauhaus, .ideas { grid-template-columns: 1fr; }
+  .bauhaus { gap: 32px; }
+  .bauhaus::before { left: 20px; right: auto; top: 0; bottom: 0; width: 2px; height: auto; }
+  .bauhaus li { padding: 0 0 0 64px; }
+  .bauhaus__mark { position: absolute; left: 0; top: 0; }
   .partners__join { width: auto; height: 56px; }
   .product-grid { grid-template-columns: 1fr 1fr; }
   .product--wide { grid-template-columns: 1fr; }
