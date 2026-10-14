@@ -21,13 +21,14 @@ python3 -m http.server 8000
 
 ## Deploy
 
-Hosted on Netlify, which deploys automatically from this repository on every push (`netlify.toml` holds the settings).
+Hosted on GitHub Pages from the `claude/dessau-modul-website-0z33cm` branch (repository root). Every push to that branch updates the live site within a minute or two.
 
-- Main address: `https://www.dessaumodul.com`
-- `dessaumodul.com` redirects to `www` (set in `netlify.toml`)
+- Main address: `https://www.dessaumodul.com` (set in the `CNAME` file)
+- `dessaumodul.com` redirects to `www` automatically once its A records point to GitHub
 - `dessaumodul.in` is forwarded to `https://www.dessaumodul.com` from GoDaddy
+- `.nojekyll` tells GitHub to serve the files as-is
 
-DNS lives at GoDaddy. Only the website records (`A @` and `CNAME www`) point to Netlify. Leave the email (`MX`, `TXT`) records alone.
+DNS lives at GoDaddy. Only the website records (`A @` and `CNAME www`) point to GitHub. Leave the email (`MX`, `TXT`) records alone.
 
 ## Before going live
 
